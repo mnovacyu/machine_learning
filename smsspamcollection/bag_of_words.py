@@ -30,3 +30,15 @@ for i in sans_punctuation_documents:
 print("TOKENIZED: %s\n" % preprocessed_documents)
 
 # Count frequencies
+frequency_list = []
+import pprint
+from collections import Counter
+
+for i in preprocessed_documents:
+    cnt = Counter()
+    for word in i:
+        cnt[word] += 1
+    frequency_list.append(cnt)
+
+print("COUNT FREQUENCIES:\n")
+pprint.pprint(frequency_list)
